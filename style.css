@@ -37,7 +37,7 @@ footer{padding:22px clamp(18px,3vw,44px) 32px;border-top:1px solid #deded9;displ
 .lightbox small{position:absolute;bottom:4vh;left:clamp(18px,3vw,44px);color:#90908b}
 .close{position:absolute;right:clamp(18px,3vw,44px);top:16px;font-size:44px;font-weight:200}
 @media(max-width:700px){
-header{position:absolute;flex-direction:column;gap:22px}
+header{position:absolute;flex-direction:column;gap:12px}
 nav{flex-wrap:wrap;max-width:320px;gap:8px 18px}
 .hero{
   min-height:0;

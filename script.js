@@ -1,1 +1,0 @@
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&location.hash.startsWith('#'))history.pushState('',document.title,location.pathname+location.search);});

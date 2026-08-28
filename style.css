@@ -39,7 +39,12 @@ footer{padding:22px clamp(18px,3vw,44px) 32px;border-top:1px solid #deded9;displ
 @media(max-width:700px){
 header{position:absolute;flex-direction:column;gap:22px}
 nav{flex-wrap:wrap;max-width:320px;gap:8px 18px}
-.hero{min-height:92vh;padding-top:190px;display:block}
+.hero{
+  min-height:0;
+  padding-top:190px;
+  padding-bottom:8vh;
+  display:block;
+}
 .hero h1{font-size:clamp(65px,21vw,130px)}
 .meta{margin-top:42px;display:flex;justify-content:space-between;font-size:19px}
 .meta p{margin:0}

@@ -76,3 +76,6 @@ nav{gap:8px 17px}
 .post h1{font-size:clamp(46px,14vw,75px);margin-bottom:55px}
 .post p{font-size:clamp(24px,7vw,38px)}
 }
+
+/* haiku post */
+.haiku-post{max-width:850px;min-height:62vh;position:relative}.haiku-post h1{font-size:clamp(18px,2vw,28px);line-height:1.1;letter-spacing:-.03em;font-weight:400;margin:0}.haiku-post time{position:absolute;left:0;bottom:0;margin:0}.haiku{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);width:100%}.haiku p{margin:0;font-size:clamp(25px,3.2vw,44px);line-height:1.25;letter-spacing:-.04em}.haiku em{font-style:italic}.haiku-post + .back{margin-left:auto;margin-right:auto}@media(max-width:700px){.haiku-post{min-height:62vh}.haiku{top:48%;width:100%}.haiku p{font-size:clamp(24px,7vw,38px);line-height:1.3}.haiku-post time{left:50%;transform:translateX(-50%);white-space:nowrap}}

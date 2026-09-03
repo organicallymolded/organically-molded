@@ -28,7 +28,7 @@ main{padding:0 clamp(18px,4vw,60px)}
 .about-content{width:min(100%,1050px);margin:0 auto}
 .about-content .intro{max-width:900px;margin:0 auto 10vh;font-size:clamp(36px,6vw,86px);line-height:.94;letter-spacing:-.06em}
 .bio-heading{text-align:center;font-size:clamp(24px,3vw,42px);margin:0 0 30px}
-.bio-photo{display:block;width:min(360px,70vw);height:auto;margin:0 auto 7vh}
+.bio-photo{display:block;width:min(360px,70vw);height:auto;margin:0 auto 7vh;object-fit:cover}
 .bio-copy{max-width:800px;margin:0 auto;text-align:center}
 .bio-copy p{margin:0 auto 30px;font-size:clamp(22px,2.5vw,34px);line-height:1.04}
 .bio-copy .location{margin-top:7vh;margin-bottom:18px;font-size:clamp(30px,4vw,52px)}
@@ -36,7 +36,7 @@ main{padding:0 clamp(18px,4vw,60px)}
 footer{padding:22px clamp(18px,4vw,60px) 32px;border-top:1px solid #deded9;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:#90908b;font-size:14px}
 .blog-page{min-height:82vh;padding-top:14vh;text-align:center}
 .blog-header{padding-bottom:8vh;border-bottom:1px solid #deded9}
-.blog-header .label{margin-bottom:35px}
+.blog-header .label{display:none}
 .blog-header h1{margin:0 0 45px;font-size:clamp(75px,13vw,180px);font-weight:400;line-height:.8;letter-spacing:-.075em}
 .blog-header p{max-width:720px;margin:0 auto;font-size:clamp(28px,4vw,58px);line-height:.96;letter-spacing:-.055em}
 .blog-list{padding:4vh 0 15vh;width:min(100%,1000px);margin:0 auto}

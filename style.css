@@ -1,3 +1,78 @@
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fafaf8;color:#4b4b48;font-family:Arial,Helvetica,sans-serif;letter-spacing:-.025em}a{color:inherit;text-decoration:none}header{position:fixed;z-index:10;top:0;left:0;width:100%;padding:22px clamp(18px,3vw,44px);display:flex;justify-content:space-between;align-items:flex-start;mix-blend-mode:multiply}.brand,nav a{font-size:clamp(16px,1.7vw,23px);line-height:1.08}.brand{font-weight:700}nav{display:flex;gap:clamp(12px,2vw,30px)}nav a:hover,.active{color:#e21f26}main{padding:0 clamp(18px,3vw,44px)}.hero{min-height:68vh;padding-top:18vh;display:grid;grid-template-columns:1.3fr .7fr}.hero h1{margin:0;font-size:clamp(64px,12vw,190px);line-height:.82;font-weight:400;letter-spacing:-.07em}.meta{font-size:clamp(18px,2vw,29px);line-height:1.02}.meta p{margin:0 0 34px}.home-vhs{width:100%;margin:0 0 14vh}.home-vhs video{display:block;width:100%;height:auto;max-height:78vh;object-fit:cover;background:#111}.work,.statement,.vhs,.about{padding:7vh 0 14vh}.label{font-size:clamp(15px,1.5vw,20px);color:#90908b;margin-bottom:22px}.project{display:block;margin-bottom:12vh}.project img{display:block;width:100%;height:auto}.portrait-project{width:min(68%,900px);margin-left:auto}.music-project{width:min(82%,1200px)}.statement,.about{display:grid;grid-template-columns:25% 1fr;border-top:1px solid #deded9}.statement>p{max-width:760px;margin:0;font-size:clamp(36px,5.8vw,86px);line-height:.95;letter-spacing:-.055em}.vhs{border-top:1px solid #deded9}.vhs>p{max-width:600px;margin:0 0 70px;font-size:clamp(30px,4vw,58px);line-height:.96;letter-spacing:-.05em}.vhs-note{border-top:1px solid #deded9;border-bottom:1px solid #deded9;padding:16px 0;display:flex;justify-content:space-between;color:#90908b;font-size:14px}.about-content{max-width:1000px}.about-content .intro{max-width:900px;margin:0 0 9vh;font-size:clamp(36px,5.8vw,86px);line-height:.95;letter-spacing:-.055em}.bio-heading{text-align:center;font-size:clamp(24px,3vw,42px);margin:0 0 28px}.bio-photo{display:block;width:min(360px,72vw);height:auto;margin:0 auto 6vh}.bio-copy{max-width:850px;margin:0 auto}.bio-copy p{margin:0 0 28px;font-size:clamp(22px,2.4vw,34px);line-height:1.02}.bio-copy .location{margin-top:6vh;margin-bottom:18px;font-size:clamp(30px,4vw,52px)}.contact{display:inline-block;margin-top:24px;color:#e21f26;font-size:clamp(20px,2.4vw,34px)}footer{padding:22px clamp(18px,3vw,44px) 32px;border-top:1px solid #deded9;display:flex;justify-content:space-between;color:#90908b;font-size:14px}.blog-page{min-height:82vh;padding-top:20vh}.blog-header{display:grid;grid-template-columns:25% 1fr;gap:20px;border-bottom:1px solid #deded9;padding-bottom:8vh}.blog-header h1{margin:0 0 45px;font-size:clamp(70px,12vw,180px);font-weight:400;line-height:.8;letter-spacing:-.07em}.blog-header p{max-width:650px;margin:0;font-size:clamp(28px,4vw,58px);line-height:.96}.blog-list{padding:4vh 0 15vh}.post-row{display:grid;grid-template-columns:80px 1fr auto;gap:20px;padding:24px 0;border-bottom:1px solid #deded9}.post-row h2{margin:0 0 8px;font-size:clamp(25px,3vw,42px);font-weight:400}.post-row p{margin:0;color:#90908b;font-size:14px}.post-page{min-height:85vh;padding-top:25vh}.post{max-width:850px;margin-left:25%}.post time{display:block;color:#90908b;font-size:14px;margin-bottom:30px}.post h1{margin:0 0 70px;font-size:clamp(48px,8vw,110px);font-weight:400;line-height:.88;letter-spacing:-.06em}.post p{max-width:700px;margin:0 0 28px;font-size:clamp(25px,3.2vw,44px);line-height:1.05}.back{display:block;margin:100px 0 60px 25%;color:#90908b;font-size:15px}@media(max-width:700px){header{position:absolute;flex-direction:column;gap:12px}nav{flex-wrap:wrap;max-width:340px;gap:8px 18px}.hero{min-height:0;padding-top:155px;padding-bottom:7vh;display:block}.hero h1{font-size:clamp(65px,21vw,130px)}.meta{margin-top:42px;display:flex;justify-content:space-between;font-size:19px}.meta p{margin:0}.home-vhs{margin-bottom:10vh}.home-vhs video{max-height:none}.work,.statement,.vhs,.about{padding-top:8vh;padding-bottom:12vh}.portrait-project,.music-project{width:100%}.statement,.about{display:block}.statement .label,.about>.label{margin-bottom:50px}.statement>p{font-size:clamp(38px,12vw,64px)}.about-content .intro{font-size:clamp(38px,11.5vw,64px);margin-bottom:9vh}.bio-heading{font-size:30px;margin-bottom:22px}.bio-photo{width:min(330px,78vw);margin-bottom:7vh}.bio-copy p{font-size:clamp(23px,7vw,38px)}.bio-copy .location{font-size:clamp(30px,9vw,50px)}.contact{font-size:clamp(20px,6vw,30px)}.blog-page{padding-top:190px}.blog-header{display:block;padding-bottom:7vh}.blog-header h1{font-size:clamp(65px,20vw,125px)}.blog-header p{font-size:clamp(30px,9vw,52px)}.post-row{grid-template-columns:45px 1fr auto;gap:12px}.post-page{padding-top:190px}.post{margin-left:0}.post h1{font-size:clamp(45px,14vw,75px);margin-bottom:55px}.post p{font-size:clamp(24px,7vw,38px)}.back{margin:80px 0 50px}footer{gap:15px;flex-wrap:wrap}}
-/* lowercase site language */
-body{text-transform:lowercase}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fafaf8;color:#4b4b48;font-family:Arial,Helvetica,sans-serif;letter-spacing:-.025em;text-transform:lowercase}
+a{color:inherit;text-decoration:none}
+header{position:relative;z-index:10;width:100%;padding:26px clamp(18px,4vw,60px) 0;text-align:center}
+.brand{display:block;font-size:clamp(17px,2vw,24px);font-weight:700;line-height:1;margin-bottom:22px}
+nav{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px 24px}
+nav a{font-size:clamp(16px,1.8vw,23px);line-height:1.05}
+nav a:hover,.active{color:#e21f26}
+main{padding:0 clamp(18px,4vw,60px)}
+.hero{min-height:82vh;padding:15vh 0 10vh;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.hero h1{margin:0;font-size:clamp(72px,13vw,190px);line-height:.78;font-weight:400;letter-spacing:-.075em}
+.meta{width:100%;max-width:900px;margin-top:8vh;display:flex;justify-content:space-between;text-align:left;font-size:clamp(18px,2vw,28px);line-height:1.02}
+.meta p{margin:0}
+.meta p:last-child{text-align:right}
+.home-vhs{width:min(100%,1100px);margin:0 auto 14vh}
+.home-vhs video{display:block;width:100%;height:auto;max-height:78vh;object-fit:cover;background:#111}
+.work,.statement,.vhs,.about{padding:10vh 0 15vh;text-align:center}
+.label{font-size:clamp(15px,1.5vw,20px);color:#90908b;margin-bottom:40px}
+.project{display:block;width:min(100%,1050px);margin:0 auto 12vh}
+.project img{display:block;width:100%;height:auto}
+.portrait-project{width:min(68%,760px)}
+.music-project{width:min(82%,950px)}
+.statement,.about,.vhs{border-top:1px solid #deded9}
+.statement>p{max-width:900px;margin:0 auto;font-size:clamp(36px,6vw,86px);line-height:.94;letter-spacing:-.06em}
+.vhs>p{max-width:760px;margin:0 auto 70px;font-size:clamp(30px,4.5vw,60px);line-height:.96;letter-spacing:-.055em}
+.vhs-note{width:min(100%,900px);margin:0 auto;border-top:1px solid #deded9;border-bottom:1px solid #deded9;padding:16px 0;display:flex;justify-content:space-between;color:#90908b;font-size:14px}
+.about-content{width:min(100%,1050px);margin:0 auto}
+.about-content .intro{max-width:900px;margin:0 auto 10vh;font-size:clamp(36px,6vw,86px);line-height:.94;letter-spacing:-.06em}
+.bio-heading{text-align:center;font-size:clamp(24px,3vw,42px);margin:0 0 30px}
+.bio-photo{display:block;width:min(360px,70vw);height:auto;margin:0 auto 7vh}
+.bio-copy{max-width:800px;margin:0 auto;text-align:center}
+.bio-copy p{margin:0 auto 30px;font-size:clamp(22px,2.5vw,34px);line-height:1.04}
+.bio-copy .location{margin-top:7vh;margin-bottom:18px;font-size:clamp(30px,4vw,52px)}
+.contact{display:inline-block;margin-top:24px;color:#e21f26;font-size:clamp(20px,2.4vw,34px)}
+footer{padding:22px clamp(18px,4vw,60px) 32px;border-top:1px solid #deded9;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:#90908b;font-size:14px}
+.blog-page{min-height:82vh;padding-top:14vh;text-align:center}
+.blog-header{padding-bottom:8vh;border-bottom:1px solid #deded9}
+.blog-header .label{margin-bottom:35px}
+.blog-header h1{margin:0 0 45px;font-size:clamp(75px,13vw,180px);font-weight:400;line-height:.8;letter-spacing:-.075em}
+.blog-header p{max-width:720px;margin:0 auto;font-size:clamp(28px,4vw,58px);line-height:.96;letter-spacing:-.055em}
+.blog-list{padding:4vh 0 15vh;width:min(100%,1000px);margin:0 auto}
+.post-row{display:grid;grid-template-columns:50px 1fr 50px;align-items:center;gap:15px;padding:24px 0;border-bottom:1px solid #deded9;text-align:center}
+.post-row h2{margin:0 0 8px;font-size:clamp(25px,3vw,42px);font-weight:400}
+.post-row p{margin:0;color:#90908b;font-size:14px}
+.post-page{min-height:85vh;padding-top:18vh;text-align:center}
+.post{max-width:850px;margin:0 auto}
+.post time{display:block;color:#90908b;font-size:14px;margin-bottom:30px}
+.post h1{margin:0 0 70px;font-size:clamp(52px,8vw,110px);font-weight:400;line-height:.88;letter-spacing:-.065em}
+.post p{max-width:700px;margin:0 auto 28px;font-size:clamp(25px,3.2vw,44px);line-height:1.05;letter-spacing:-.04em}
+.back{display:inline-block;margin:100px auto 60px;color:#90908b;font-size:15px}
+@media(max-width:700px){
+header{padding-top:24px}
+nav{gap:8px 17px}
+.hero{min-height:78vh;padding-top:10vh;padding-bottom:8vh}
+.hero h1{font-size:clamp(68px,21vw,130px)}
+.meta{margin-top:7vh;font-size:19px}
+.home-vhs{margin-bottom:10vh}
+.home-vhs video{max-height:none}
+.work,.statement,.vhs,.about{padding-top:9vh;padding-bottom:12vh}
+.project,.portrait-project,.music-project{width:100%;margin-bottom:9vh}
+.statement>p{font-size:clamp(38px,12vw,64px)}
+.vhs>p{font-size:clamp(32px,10vw,55px)}
+.vhs-note{font-size:12px}
+.about-content .intro{font-size:clamp(38px,11.5vw,64px);margin-bottom:9vh}
+.bio-heading{font-size:30px;margin-bottom:22px}
+.bio-photo{width:min(330px,72vw);margin-bottom:7vh}
+.bio-copy p{font-size:clamp(23px,7vw,38px)}
+.bio-copy .location{font-size:clamp(30px,9vw,50px)}
+.contact{font-size:clamp(20px,6vw,30px)}
+.blog-page{padding-top:10vh}
+.blog-header h1{font-size:clamp(70px,20vw,125px)}
+.blog-header p{font-size:clamp(30px,9vw,52px)}
+.post-row{grid-template-columns:35px 1fr 35px;gap:10px}
+.post-page{padding-top:10vh}
+.post h1{font-size:clamp(46px,14vw,75px);margin-bottom:55px}
+.post p{font-size:clamp(24px,7vw,38px)}
+}

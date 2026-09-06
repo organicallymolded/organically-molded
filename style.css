@@ -115,3 +115,84 @@ nav{gap:8px 17px}
     gap:10px;
   }
 }
+/* music videos archive */
+
+.music-video-page{
+  min-height:82vh;
+  padding-top:14vh;
+  text-align:center;
+}
+
+.music-video-header{
+  padding-bottom:8vh;
+  border-bottom:1px solid #deded9;
+}
+
+.music-video-header h1{
+  margin:0 0 45px;
+  font-size:clamp(65px,12vw,170px);
+  font-weight:400;
+  line-height:.8;
+  letter-spacing:-.075em;
+}
+
+.music-video-header p{
+  max-width:720px;
+  margin:0 auto;
+  font-size:clamp(28px,4vw,58px);
+  line-height:.96;
+  letter-spacing:-.055em;
+}
+
+.music-video-list{
+  padding:4vh 0 15vh;
+  width:min(100%,1000px);
+  margin:0 auto;
+}
+
+.music-video-entry{
+  margin-bottom:10vh;
+}
+
+.music-video-note{
+  width:100%;
+  border-top:1px solid #deded9;
+  border-bottom:1px solid #deded9;
+  padding:16px 0;
+  display:flex;
+  justify-content:space-between;
+  color:#90908b;
+  font-size:14px;
+}
+
+.music-video-placeholder{
+  width:100%;
+  aspect-ratio:16 / 9;
+  margin-top:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#111;
+  color:#fafaf8;
+  font-size:14px;
+}
+
+@media(max-width:700px){
+
+  .music-video-page{
+    padding-top:10vh;
+  }
+
+  .music-video-header h1{
+    font-size:clamp(65px,19vw,120px);
+  }
+
+  .music-video-header p{
+    font-size:clamp(30px,9vw,52px);
+  }
+
+  .music-video-note{
+    font-size:12px;
+  }
+
+}

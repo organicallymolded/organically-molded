@@ -53,52 +53,95 @@ document.addEventListener("DOMContentLoaded", function () {
   updateButton();
 });
 
+
 /* vhs fullscreen viewer */
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
   const lightbox = document.getElementById("vhs-lightbox");
   const viewer = document.getElementById("vhs-lightbox-video");
   const closeButton = document.querySelector(".vhs-lightbox-close");
+
   if (!lightbox || !viewer) return;
 
-  const clips = document.querySelectorAll(".vhs-clip video");
+  const clips = document.querySelectorAll(".vhs-clip");
 
-  function openViewer(source) {
-    const src = source.currentSrc || source.querySelector("source")?.src;
+  function getVideoSource(video) {
+    const source = video.querySelector("source");
+    return video.currentSrc || video.src || (source ? source.src : "");
+  }
+
+  function openViewer(video) {
+    const src = getVideoSource(video);
     if (!src) return;
 
+    viewer.pause();
     viewer.src = src;
     viewer.muted = true;
     viewer.setAttribute("muted", "");
     viewer.setAttribute("playsinline", "");
+    viewer.setAttribute("webkit-playsinline", "");
+
     lightbox.classList.add("is-open");
     lightbox.setAttribute("aria-hidden", "false");
     document.body.classList.add("vhs-viewer-open");
-    viewer.play().catch(() => {});
+
+    viewer.load();
+    viewer.play().catch(function () {});
   }
 
   function closeViewer() {
     viewer.pause();
     viewer.removeAttribute("src");
     viewer.load();
+
     lightbox.classList.remove("is-open");
     lightbox.setAttribute("aria-hidden", "true");
     document.body.classList.remove("vhs-viewer-open");
   }
 
-  clips.forEach(video => {
-    video.addEventListener("click", event => {
+  clips.forEach(function (clip) {
+    const video = clip.querySelector("video");
+    if (!video) return;
+
+    // Use the container as the tap target — more reliable on iOS Safari.
+    clip.addEventListener("click", function (event) {
       event.preventDefault();
+      event.stopPropagation();
       openViewer(video);
     });
+
+    clip.addEventListener("touchend", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      openViewer(video);
+    }, { passive: false });
   });
 
-  closeButton?.addEventListener("click", closeViewer);
+  if (closeButton) {
+    closeButton.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      closeViewer();
+    });
 
-  lightbox.addEventListener("click", event => {
+    closeButton.addEventListener("touchend", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      closeViewer();
+    }, { passive: false });
+  }
+
+  lightbox.addEventListener("click", function (event) {
     if (event.target === lightbox) closeViewer();
   });
 
-  document.addEventListener("keydown", event => {
+  lightbox.addEventListener("touchend", function (event) {
+    if (event.target === lightbox) {
+      event.preventDefault();
+      closeViewer();
+    }
+  }, { passive: false });
+
+  document.addEventListener("keydown", function (event) {
     if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
       closeViewer();
     }

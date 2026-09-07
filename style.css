@@ -176,3 +176,16 @@ body.vhs-viewer-open{overflow:hidden}
   .vhs-lightbox{padding:12px}
   .vhs-lightbox-close{top:10px;right:14px}
 }
+
+.vhs-clip{
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+.vhs-lightbox{
+  -webkit-overflow-scrolling:touch;
+}
+.vhs-lightbox-inner video{
+  -webkit-user-select:none;
+  user-select:none;
+}

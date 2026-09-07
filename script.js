@@ -1,51 +1,54 @@
-// Organically Molded — static site.
 
-
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
   const audio = document.getElementById("site-audio");
   const button = document.querySelector(".site-audio-toggle");
-  if (!audio || !button) return;
 
-  let started = false;
+  if (!audio) return;
 
-  const update = () => {
+  let musicStarted = false;
+
+  function updateButton() {
+    if (!button) return;
     button.textContent = audio.paused ? "▶" : "Ⅱ";
     button.setAttribute("aria-label", audio.paused ? "play music" : "pause music");
-  };
+  }
 
-  const startMusic = () => {
-    if (started || !audio.paused) return;
+  function startMusic() {
+    if (musicStarted || !audio.paused) return;
 
-    audio.play().then(() => {
-      started = true;
-      update();
-    }).catch(() => {});
-  };
+    audio.play().then(function () {
+      musicStarted = true;
+      updateButton();
+    }).catch(function (error) {
+      console.log("Music could not start yet:", error);
+    });
+  }
 
-  // The visitor's first tap/click/key interaction starts the music.
-  document.addEventListener("pointerdown", startMusic, { once: true, passive: true });
-  document.addEventListener("touchstart", startMusic, { once: true, passive: true });
+  // Browser-safe: the first real interaction starts the music.
+  document.addEventListener("click", startMusic, { once: true });
+  document.addEventListener("touchend", startMusic, { once: true });
   document.addEventListener("keydown", startMusic, { once: true });
 
-  // The player button remains available for pause/play.
-  button.addEventListener("click", (event) => {
-    event.preventDefault();
-    event.stopPropagation();
+  if (button) {
+    button.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
 
-    if (audio.paused) {
-      audio.play().then(() => {
-        started = true;
-        update();
-      }).catch(() => {});
-    } else {
-      audio.pause();
-      update();
-    }
-  });
+      if (audio.paused) {
+        audio.play().then(function () {
+          musicStarted = true;
+          updateButton();
+        }).catch(function (error) {
+          console.log("Music could not start:", error);
+        });
+      } else {
+        audio.pause();
+        updateButton();
+      }
+    });
+  }
 
-  audio.addEventListener("play", update);
-  audio.addEventListener("pause", update);
-  audio.addEventListener("ended", update);
-  audio.load();
-  update();
+  audio.addEventListener("play", updateButton);
+  audio.addEventListener("pause", updateButton);
+  updateButton();
 });

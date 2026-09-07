@@ -253,3 +253,42 @@ body.photo-viewer-open{overflow:hidden}
 .film-square img{
   pointer-events:none;
 }
+
+/* documentary archive */
+.documentary-page-body{background:#0b0b0a;color:#f4f4ef;text-transform:lowercase;min-height:100vh}
+.documentary-page-body .documentary-header{position:fixed;z-index:20;top:0;left:0;width:100%;padding:22px clamp(18px,3vw,44px);display:flex;justify-content:space-between;align-items:flex-start;background:rgba(11,11,10,.86);mix-blend-mode:normal}
+.documentary-page-body .documentary-header .brand,.documentary-page-body .documentary-header nav a{color:#f4f4ef}
+.documentary-page-body .documentary-header nav{gap:clamp(12px,2vw,30px)}
+.documentary-page-body .documentary-header nav a:hover,.documentary-page-body .documentary-header nav a.active{color:#9b9b96}
+.documentary-page{padding:130px clamp(18px,5vw,80px) 100px;max-width:1500px;margin:0 auto}
+.documentary-intro{position:relative;display:grid;grid-template-columns:20% 1fr auto;gap:30px;padding:35px 0 90px;border-bottom:1px solid #383835}
+.documentary-label{color:#8e8e89;font-size:14px}
+.documentary-intro-copy h1{margin:0 0 38px;font-size:clamp(55px,8vw,115px);font-weight:400;line-height:.82;letter-spacing:-.065em}
+.documentary-intro-copy p{margin:0;color:#a7a7a2;font-family:monospace;font-size:clamp(15px,1.3vw,19px);line-height:1.45}
+.documentary-manifesto{text-align:right;color:#8e8e89;font-family:monospace;font-size:13px;line-height:1.5}
+.documentary-entry{display:grid;grid-template-columns:20% minmax(0,1.4fr) minmax(300px,.8fr);gap:30px;padding:70px 0 110px}
+.documentary-number{font-family:monospace;color:#8e8e89;font-size:16px}
+.documentary-image-link{position:relative;display:block;overflow:hidden;background:#171716}
+.documentary-image-link img{width:100%;height:auto;display:block;aspect-ratio:16/9;object-fit:cover;transition:transform .4s ease,opacity .3s ease}
+.documentary-image-link span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:monospace;font-size:14px;color:#fff;white-space:nowrap;opacity:0;transition:opacity .3s ease}
+.documentary-image-link::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.18);opacity:0;transition:opacity .3s ease}
+.documentary-image-link:hover img{transform:scale(1.015);opacity:.88}.documentary-image-link:hover::after,.documentary-image-link:hover span{opacity:1}
+.documentary-info{padding-top:0}.documentary-info h2{margin:0 0 24px;font-size:clamp(32px,4vw,60px);font-weight:400;line-height:.9;letter-spacing:-.05em}
+.documentary-year{font-family:monospace;color:#8e8e89;font-size:14px;margin-bottom:50px}
+.documentary-credits{border-top:1px solid #383835}
+.documentary-credits div{display:grid;grid-template-columns:100px 1fr;gap:15px;padding:13px 0;border-bottom:1px solid #383835;font-family:monospace;font-size:13px;color:#a7a7a2}
+.documentary-watch{display:inline-block;margin-top:35px;border:1px solid #666660;padding:15px 20px;font-family:monospace;font-size:13px;transition:background .25s,color .25s}
+.documentary-watch:hover{background:#f4f4ef;color:#0b0b0a}
+.documentary-coming-soon{padding:0 0 100px;color:#8e8e89;font-family:monospace;font-size:14px}
+.documentary-placeholder{margin-top:20px;width:min(430px,100%);aspect-ratio:16/9;border:1px solid #252523;background:#121211;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#aaa;font-size:14px}
+.documentary-placeholder span:first-child{font-size:20px}.documentary-placeholder span:last-child{color:#777}
+.documentary-footer{border-top:1px solid #383835;padding:22px clamp(18px,5vw,80px) 32px;display:flex;justify-content:space-between;color:#777;font-family:monospace;font-size:12px;background:#0b0b0a}
+.documentary-project-page{max-width:1250px;margin:0 auto;padding:150px clamp(18px,5vw,80px) 100px}
+.documentary-back{display:block;color:#8e8e89;font-family:monospace;font-size:13px;margin-bottom:75px}
+.documentary-project-heading{border-bottom:1px solid #383835;padding-bottom:35px}
+.documentary-project-heading h1{margin:20px 0 28px;font-size:clamp(50px,8vw,115px);font-weight:400;line-height:.82;letter-spacing:-.065em}
+.documentary-project-meta{display:flex;justify-content:space-between;color:#8e8e89;font-family:monospace;font-size:13px}
+.documentary-project-video{padding:65px 0 90px}.documentary-video-embed{position:relative;width:100%;aspect-ratio:16/9;background:#000}.documentary-video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.documentary-project-credits{max-width:800px;margin-left:20%;border-top:1px solid #383835}.documentary-project-credits h2{font-size:14px;font-weight:400;color:#8e8e89;margin:18px 0 25px;font-family:monospace}.documentary-project-credits div{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:15px 0;border-bottom:1px solid #383835;font-family:monospace;font-size:13px;color:#a7a7a2}
+@media(max-width:900px){.documentary-intro{grid-template-columns:1fr auto}.documentary-label{grid-column:1/-1}.documentary-entry{grid-template-columns:45px 1fr}.documentary-info{grid-column:2}.documentary-manifesto{font-size:11px}.documentary-project-credits{margin-left:0}}
+@media(max-width:700px){.documentary-page-body .documentary-header{position:absolute;flex-direction:column;gap:12px}.documentary-page-body .documentary-header nav{flex-wrap:wrap;max-width:350px;gap:8px 18px}.documentary-page{padding-top:210px}.documentary-intro{display:block;padding-bottom:60px}.documentary-label{margin-bottom:45px}.documentary-intro-copy h1{font-size:clamp(58px,18vw,100px);margin-bottom:32px}.documentary-manifesto{text-align:left;margin-top:35px}.documentary-entry{display:block;padding:50px 0 80px}.documentary-number{margin-bottom:14px}.documentary-image-link img{aspect-ratio:16/10}.documentary-image-link span{opacity:1;top:auto;left:15px;bottom:15px;transform:none;font-size:12px}.documentary-image-link::after{opacity:1;background:linear-gradient(transparent,rgba(0,0,0,.4))}.documentary-info{padding-top:40px}.documentary-info h2{font-size:clamp(38px,10vw,58px)}.documentary-year{margin-bottom:35px}.documentary-project-page{padding-top:210px}.documentary-project-heading h1{font-size:clamp(50px,14vw,85px)}.documentary-project-video{padding:45px 0 65px}.documentary-project-credits div{grid-template-columns:95px 1fr}.documentary-footer{gap:15px;flex-wrap:wrap}}

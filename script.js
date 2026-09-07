@@ -1,1 +1,2 @@
 // Organically Molded — static site.
+document.addEventListener("DOMContentLoaded",()=>{const a=document.getElementById("site-audio"),b=document.querySelector(".site-audio-toggle");if(!a||!b)return;const u=()=>{b.textContent=a.paused?"▶":"Ⅱ"};b.onclick=e=>{e.stopPropagation();a.paused?a.play().catch(()=>{}):a.pause()};a.onplay=u;a.onpause=u;["pointerdown","touchstart","keydown"].forEach(x=>document.addEventListener(x,()=>{if(a.paused)a.play().catch(()=>{})},{once:true}));u()});

@@ -122,3 +122,8 @@ header{padding-top:24px}nav{gap:8px 17px}.hero{min-height:78vh;padding-top:10vh;
 .music-video-page{padding-top:10vh}.music-video-header h1{font-size:clamp(65px,19vw,120px)}.music-video-header p{font-size:clamp(30px,9vw,52px)}
 .music-video-note{font-size:12px;grid-template-columns:1fr 1fr 1fr;gap:8px}.music-project-page{padding-top:5vh}.back-link{margin-bottom:7vh}.project-heading h1{font-size:clamp(65px,18vw,120px)}.project-title-row,.credit-row{font-size:12px}
 }
+
+.site-audio-player{position:fixed;left:20px;bottom:20px;z-index:1000;display:flex;align-items:center;gap:9px;font-size:11px;color:inherit;mix-blend-mode:difference}
+.site-audio-toggle{width:25px;height:25px;padding:0;border:1px solid currentColor;border-radius:50%;background:transparent;color:inherit;font:inherit;line-height:1;cursor:pointer}
+.site-audio-player span{white-space:nowrap}
+@media(max-width:520px){.site-audio-player{left:12px;bottom:12px}.site-audio-player span{max-width:180px;overflow:hidden;text-overflow:ellipsis}}

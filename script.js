@@ -52,3 +52,55 @@ document.addEventListener("DOMContentLoaded", function () {
   audio.addEventListener("pause", updateButton);
   updateButton();
 });
+
+/* vhs fullscreen viewer */
+document.addEventListener("DOMContentLoaded", () => {
+  const lightbox = document.getElementById("vhs-lightbox");
+  const viewer = document.getElementById("vhs-lightbox-video");
+  const closeButton = document.querySelector(".vhs-lightbox-close");
+  if (!lightbox || !viewer) return;
+
+  const clips = document.querySelectorAll(".vhs-clip video");
+
+  function openViewer(source) {
+    const src = source.currentSrc || source.querySelector("source")?.src;
+    if (!src) return;
+
+    viewer.src = src;
+    viewer.muted = true;
+    viewer.setAttribute("muted", "");
+    viewer.setAttribute("playsinline", "");
+    lightbox.classList.add("is-open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.classList.add("vhs-viewer-open");
+    viewer.play().catch(() => {});
+  }
+
+  function closeViewer() {
+    viewer.pause();
+    viewer.removeAttribute("src");
+    viewer.load();
+    lightbox.classList.remove("is-open");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("vhs-viewer-open");
+  }
+
+  clips.forEach(video => {
+    video.addEventListener("click", event => {
+      event.preventDefault();
+      openViewer(video);
+    });
+  });
+
+  closeButton?.addEventListener("click", closeViewer);
+
+  lightbox.addEventListener("click", event => {
+    if (event.target === lightbox) closeViewer();
+  });
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
+      closeViewer();
+    }
+  });
+});

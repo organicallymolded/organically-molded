@@ -243,3 +243,13 @@ body.photo-viewer-open{overflow:hidden}
   .photo-lightbox{padding:12px}
   .photo-lightbox-close{top:10px;right:14px}
 }
+
+.film-square{
+  position:relative;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+.film-square img{
+  pointer-events:none;
+}

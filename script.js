@@ -148,6 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
 /* film photo fullscreen viewer */
 document.addEventListener("DOMContentLoaded", function () {
   const lightbox = document.getElementById("photo-lightbox");
@@ -156,9 +157,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!lightbox || !viewer) return;
 
-  const photos = document.querySelectorAll(".film-square img");
-
   function openPhoto(image) {
+    if (!image || !image.src) return;
+
     viewer.src = image.currentSrc || image.src;
     viewer.alt = image.alt || "";
     lightbox.classList.add("is-open");
@@ -170,24 +171,32 @@ document.addEventListener("DOMContentLoaded", function () {
     lightbox.classList.remove("is-open");
     lightbox.setAttribute("aria-hidden", "true");
     document.body.classList.remove("photo-viewer-open");
-    viewer.removeAttribute("src");
+    viewer.src = "";
   }
 
-  photos.forEach(function (image) {
-    const square = image.closest(".film-square") || image;
-
-    square.addEventListener("click", function (event) {
-      event.preventDefault();
-      event.stopPropagation();
-      openPhoto(image);
-    });
-
-    square.addEventListener("touchend", function (event) {
-      event.preventDefault();
-      event.stopPropagation();
-      openPhoto(image);
-    }, { passive: false });
+  // One delegated handler works reliably for dynamically loaded images
+  // and mobile Safari. The entire square is the tap target.
+  document.addEventListener("click", function (event) {
+    const square = event.target.closest(".film-square");
+    if (square && lightbox && !lightbox.classList.contains("is-open")) {
+      const image = square.querySelector("img");
+      if (image) {
+        event.preventDefault();
+        openPhoto(image);
+      }
+    }
   });
+
+  document.addEventListener("touchend", function (event) {
+    const square = event.target.closest(".film-square");
+    if (square && lightbox && !lightbox.classList.contains("is-open")) {
+      const image = square.querySelector("img");
+      if (image) {
+        event.preventDefault();
+        openPhoto(image);
+      }
+    }
+  }, { passive: false });
 
   if (closeButton) {
     closeButton.addEventListener("click", function (event) {
@@ -195,7 +204,6 @@ document.addEventListener("DOMContentLoaded", function () {
       event.stopPropagation();
       closePhoto();
     });
-
     closeButton.addEventListener("touchend", function (event) {
       event.preventDefault();
       event.stopPropagation();

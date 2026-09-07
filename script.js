@@ -147,3 +147,76 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+/* film photo fullscreen viewer */
+document.addEventListener("DOMContentLoaded", function () {
+  const lightbox = document.getElementById("photo-lightbox");
+  const viewer = document.getElementById("photo-lightbox-image");
+  const closeButton = document.querySelector(".photo-lightbox-close");
+
+  if (!lightbox || !viewer) return;
+
+  const photos = document.querySelectorAll(".film-square img");
+
+  function openPhoto(image) {
+    viewer.src = image.currentSrc || image.src;
+    viewer.alt = image.alt || "";
+    lightbox.classList.add("is-open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.classList.add("photo-viewer-open");
+  }
+
+  function closePhoto() {
+    lightbox.classList.remove("is-open");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("photo-viewer-open");
+    viewer.removeAttribute("src");
+  }
+
+  photos.forEach(function (image) {
+    const square = image.closest(".film-square") || image;
+
+    square.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      openPhoto(image);
+    });
+
+    square.addEventListener("touchend", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      openPhoto(image);
+    }, { passive: false });
+  });
+
+  if (closeButton) {
+    closeButton.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      closePhoto();
+    });
+
+    closeButton.addEventListener("touchend", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      closePhoto();
+    }, { passive: false });
+  }
+
+  lightbox.addEventListener("click", function (event) {
+    if (event.target === lightbox) closePhoto();
+  });
+
+  lightbox.addEventListener("touchend", function (event) {
+    if (event.target === lightbox) {
+      event.preventDefault();
+      closePhoto();
+    }
+  }, { passive: false });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
+      closePhoto();
+    }
+  });
+});

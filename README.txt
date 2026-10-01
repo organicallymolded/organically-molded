@@ -1,16 +1,11 @@
 ORGANICALLY MOLDED — BLOG UPDATE
 
-This package preserves the existing Organically Molded blog files and adds the new interview post.
+This package preserves the existing blog files and assets.
 
-Added:
-- blog/an-interview-with-fernando.html
-- New #04 entry on blog.html
+Changes:
+- Removed the “no predetermined mold” post completely.
+- “an interview with fernando” is now post 03.
+- Existing posts 01 and 02 remain unchanged.
+- The interview content and related photography are included.
 
-Preserved from the previous blog package:
-- style.css
-- script.js
-- blog-editorial.css
-- blog/no-predetermined-mold.html
-- all existing blog assets
-
-Upload/copy the contents of om-blog/ into the same location as your current site files.
+Upload/replace the blog.html, blog-editorial.css, style.css, script.js, blog/ and assets/ files as needed within the existing site structure.

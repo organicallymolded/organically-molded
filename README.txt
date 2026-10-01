@@ -1,16 +1,16 @@
 ORGANICALLY MOLDED — BLOG UPDATE
 
-This is a drop-in package for the new editorial interview:
-"no predetermined mold"
+This package preserves the existing Organically Molded blog files and adds the new interview post.
 
-Files to copy into your existing website:
-- blog.html -> replace your existing blog.html
-- blog/no-predetermined-mold.html -> add/replace this article
-- blog-editorial.css -> add/replace this stylesheet
-- style.css -> replace your current stylesheet with this current version
-- script.js -> current site script (included for convenience)
-- assets/ -> add these interview photos to your existing assets folder
+Added:
+- blog/an-interview-with-fernando.html
+- New #04 entry on blog.html
 
-The package is NOT intended to replace your entire website root; your existing
-index.html, music-videos.html, documentary.html, videos, and other site assets
-remain unchanged.
+Preserved from the previous blog package:
+- style.css
+- script.js
+- blog-editorial.css
+- blog/no-predetermined-mold.html
+- all existing blog assets
+
+Upload/copy the contents of om-blog/ into the same location as your current site files.

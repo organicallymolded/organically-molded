@@ -4,7 +4,7 @@
 .editorial-hero{max-width:1250px;margin:0 auto}
 .editorial-kicker{color:#90908b;font-size:14px;margin-bottom:28px}
 .editorial-hero h1{font-size:clamp(72px,13vw,190px);font-weight:400;line-height:.78;letter-spacing:-.075em;margin:0 0 45px}
-.editorial-dek{font-size:clamp(22px,3vw,42px);line-height:1;letter-spacing:-.045em;max-width:700px;margin:0 0 10vh}
+.editorial-byline{color:#90908b;font-size:14px;margin:0 0 18px}.editorial-dek{font-size:clamp(22px,3vw,42px);line-height:1;letter-spacing:-.045em;max-width:700px;margin:0 0 10vh}
 .editorial-image{margin:0}
 .editorial-image img{display:block;width:100%;height:auto}
 .editorial-image figcaption{font-size:12px;color:#90908b;margin-top:10px}

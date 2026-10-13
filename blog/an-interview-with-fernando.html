@@ -41,10 +41,10 @@
     <h1>an interview<br>with fernando</h1>
     <p class="editorial-byline">by claudia lazaro</p>
     <p class="editorial-dek">a conversation about music, cameras, community, nostalgia, and organically molded.</p>
-    <div class="interview-audio" aria-label="Interview soundtrack">
-      <span class="interview-audio-label">now playing</span>
+    <div class="interview-audio-player" aria-label="interview soundtrack">
+      <button class="interview-audio-toggle" type="button" aria-label="play music" aria-pressed="false">▶</button>
       <span class="interview-audio-title">sideways (instrumental) - 2016</span>
-      <audio controls preload="none" aria-label="sideways (instrumental) - 2016">
+      <audio id="interview-audio" preload="none" aria-label="sideways (instrumental) - 2016">
         <source src="../assets/sideways-instrumental-2016.mp3" type="audio/mpeg">
         Your browser does not support audio playback.
       </audio>
@@ -312,5 +312,43 @@
 </main>
 
 <footer><span>Organically Molded</span><span>© 2026</span><span>California, USA</span></footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const audio = document.getElementById("interview-audio");
+  const button = document.querySelector(".interview-audio-toggle");
+  if (!audio || !button) return;
+  function updateButton() {
+    button.textContent = audio.paused ? "▶" : "Ⅱ";
+    button.setAttribute("aria-label", audio.paused ? "play music" : "pause music");
+    button.setAttribute("aria-pressed", String(!audio.paused));
+  }
+  let autoStartAttemptedSuccessfully = false;
+  function startFromFirstInteraction(event) {
+    if (autoStartAttemptedSuccessfully || !audio.paused) return;
+    // The player button has its own click-to-toggle behavior; don't double-toggle it.
+    if (event && event.target && event.target.closest && event.target.closest(".interview-audio-toggle")) return;
+    audio.play().then(function () {
+      autoStartAttemptedSuccessfully = true;
+      updateButton();
+      window.removeEventListener("scroll", startFromFirstInteraction);
+      document.removeEventListener("pointerdown", startFromFirstInteraction, true);
+      document.removeEventListener("touchstart", startFromFirstInteraction, true);
+    }).catch(function () {
+      // Some browsers only allow playback from a direct tap. Keep listening for one.
+    });
+  }
+  window.addEventListener("scroll", startFromFirstInteraction, { passive: true });
+  document.addEventListener("pointerdown", startFromFirstInteraction, true);
+  document.addEventListener("touchstart", startFromFirstInteraction, { passive: true, capture: true });
+  button.addEventListener("click", function () {
+    if (audio.paused) audio.play().then(function () { autoStartAttemptedSuccessfully = true; updateButton(); }).catch(function () {});
+    else { audio.pause(); updateButton(); }
+  });
+  audio.addEventListener("play", updateButton);
+  audio.addEventListener("pause", updateButton);
+  audio.addEventListener("ended", updateButton);
+  updateButton();
+});
+</script>
 </body>
 </html>

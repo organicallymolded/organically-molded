@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // One delegated handler works reliably for dynamically loaded images
-  // and mobile Safari. The entire square is the tap target.
+  // & mobile Safari. The entire square is the tap target.
   document.addEventListener("click", function (event) {
     const square = event.target.closest(".film-square");
     if (square && lightbox && !lightbox.classList.contains("is-open")) {

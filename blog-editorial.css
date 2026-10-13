@@ -7,7 +7,8 @@
 .editorial-byline{color:#90908b;font-size:14px;margin:0 0 18px}.editorial-dek{font-size:clamp(22px,3vw,42px);line-height:1;letter-spacing:-.045em;max-width:700px;margin:0 0 10vh}
 .editorial-image{margin:0}
 /* Keep interview photos and their captions separated from surrounding paragraphs. */
-.qa > .editorial-image{margin-block:5vh}
+.qa > .editorial-image{margin:5vh 0 6vh}
+.qa > .editorial-image + p{margin-top:0}
 .editorial-image img{display:block;width:100%;height:auto}
 .editorial-image figcaption{font-size:12px;color:#90908b;margin-top:10px}
 .editorial-image-wide{width:min(100%,1100px);margin-left:auto;margin-right:auto}
@@ -45,10 +46,21 @@
   .editorial-image-medium,.editorial-image-small{width:100%}
   .editorial-image-pair{grid-template-columns:1fr;gap:30px;margin:8vh auto}
   .qa{margin-bottom:6vh}
-  .qa > .editorial-image{margin-block:4vh}
+  .qa > .editorial-image{margin:4vh 0 5vh}
   .qa h3{margin-bottom:22px}
   .qa p{line-height:1.18}
   .editorial-final-line{margin-top:10vh}
 }
 
 .editorial-speaker-label{color:#90908b;font-weight:700;margin-right:.18em}
+
+/* Closing interviewer prompt matches the bold question styling. */
+.editorial-thanks h3{font-weight:700}
+
+
+/* Minimal soundtrack player for the Fernando interview. */
+.interview-audio{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:-6vh 0 8vh;color:#90908b;font-size:12px;letter-spacing:.02em}
+.interview-audio-label{text-transform:uppercase;letter-spacing:.1em}
+.interview-audio-title{color:#171714}
+.interview-audio audio{display:block;width:min(100%,320px);height:34px}
+@media(max-width:600px){.interview-audio{margin:-4vh 0 7vh;gap:10px}.interview-audio audio{width:100%;max-width:320px}}

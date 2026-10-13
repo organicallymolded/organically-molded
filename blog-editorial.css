@@ -58,9 +58,8 @@
 .editorial-thanks h3{font-weight:700}
 
 
-/* Minimal soundtrack player for the Fernando interview. */
-.interview-audio{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:-6vh 0 8vh;color:#90908b;font-size:12px;letter-spacing:.02em}
-.interview-audio-label{text-transform:uppercase;letter-spacing:.1em}
-.interview-audio-title{color:#171714}
-.interview-audio audio{display:block;width:min(100%,320px);height:34px}
-@media(max-width:600px){.interview-audio{margin:-4vh 0 7vh;gap:10px}.interview-audio audio{width:100%;max-width:320px}}
+/* Interview soundtrack — match the discreet fixed player on the main site. */
+.interview-audio-player{position:fixed;left:20px;bottom:20px;z-index:1000;display:flex;align-items:center;gap:9px;font-size:11px;color:inherit;mix-blend-mode:difference}
+.interview-audio-toggle{width:25px;height:25px;flex:0 0 25px;padding:0;border:1px solid currentColor;border-radius:50%;background:transparent;color:inherit;font:inherit;line-height:1;cursor:pointer}
+.interview-audio-title{white-space:nowrap;max-width:min(260px,65vw);overflow:hidden;text-overflow:ellipsis}
+@media(max-width:520px){.interview-audio-player{left:12px;bottom:12px}.interview-audio-title{max-width:180px}}
